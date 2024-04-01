@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.image-gallery {
+  display: flex;
+  overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+}
+
+.image-gallery img {
+  width: 300px; /* Ancho de las imágenes */
+  height: auto;
+  margin-right: 20px; /* Espacio entre las imágenes */
+  transition: transform 0.5s ease; /* Transición suave para la animación */
+}

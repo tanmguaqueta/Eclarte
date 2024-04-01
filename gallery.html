@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECLARTE - Img</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/store-styles.css">
+  <style>
+    body {
+      margin: 0; /* Eliminar márgenes para evitar espacios blancos */
+      padding-bottom: 100px; /* Agregar espacio en la parte inferior para el pie de página */
+      position: relative; /* Para posicionar correctamente el pie de página */
+    }
+
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Enviamos el video al fondo */
+    }
+
+    header, main {
+      position: relative;
+      z-index: 1; /* Para que los elementos no queden detrás del video */
+    }
+
+    footer {
+      position: absolute; /* Posicionamiento absoluto en la parte inferior */
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      background-color: rgba(75, 0, 130, 0.6); /* Fondo semitransparente para mejorar la legibilidad */
+      z-index: 1; /* Para que el pie de página esté encima del video */
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px; /* Aumentar el espacio entre las imágenes */
+      padding: 10px; /* Reducir el padding dentro del contenedor de la galería */
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: auto; /* Altura automática para mantener la proporción */
+      max-width: 300px; /* Ancho máximo de las imágenes */
+      border-radius: 10px; /* Añadimos bordes redondeados para un mejor aspecto */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añadimos sombra a las imágenes */
+      transition: transform 0.3s ease; /* Transición suave para la animación */
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.1); /* Hacer zoom en la imagen al pasar el cursor sobre ella */
+    }
+
+    .copyright {
+      background-color: rgb(0 0 0 / 62%); /* Fondo semitransparente para el cuadro de derechos de autor */
+      padding: 20px;
+      border-radius: 10px; /* Añadimos bordes redondeados al cuadro */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añadimos sombra al cuadro */
+      max-width: 80%; /* Establecemos un ancho máximo para el cuadro */
+      text-align: center; /* Alineamos el texto al centro */
+      margin: auto; /* Centramos el cuadro horizontalmente */
+      margin-top: 20px; /* Agregamos un margen superior */
+    }
+  </style>
+</head>
+<body>
+  <video id="video-background" autoplay loop muted>
+    <source src="gifs/1.mp4" type="video/mp4"> <!-- Ruta del video -->
+    Tu navegador no admite la etiqueta de video.
+  </video>
+
+  <header>
+    <h1>ECLARTE</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="store.html">Tienda</a></li>
+        <li><a href="gallery.html">Galería de Imágenes</a></li>
+        <li><a href="video-gallery.html">Galería de Videos</a></li>
+        <li><a href="about.html">Quién Soy</a></li>
+        <li><a href="contact.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="image-gallery">
+      <img src="img/Imagen de WhatsApp 2024-03-29 a las 17.35.06_485352f4.jpg" alt="Imagen 1">
+      <img src="img/IMG-20240328-WA0005.jpg" alt="Imagen 2">
+      <img src="img/IMG-20240328-WA0006.jpg" alt="Imagen 3">
+      <img src="img/IMG-20240328-WA0007.jpg" alt="Imagen 4">
+      <img src="img/IMG-20240328-WA0008.jpg" alt="Imagen 5">
+      <img src="img/IMG-20240328-WA0009.jpg" alt="Imagen 6">
+      <img src="img/IMG-20240328-WA0010.jpg" alt="Imagen 7">
+      <img src="img/IMG-20240328-WA0011.jpg" alt="Imagen 8">
+    </div>
+    <div class="copyright">
+      <p>Todos los derechos de autora tania Guaqueta en este sitio web y su contenido son propiedad de ECLARTE a menos que se indique lo contrario. Queda estrictamente prohibida la reproducción, distribución, modificación o cualquier otro uso de cualquier contenido de este sitio web sin el permiso previo por escrito de ECLARTE.</p>
+      <p>Si deseas utilizar algún contenido de este sitio web, por favor contáctanos en tan_arte@hotmail.com para solicitar permiso.</p>
+      <p>Cualquier violación de los derechos de autor será perseguida conforme a la ley.</p>
+    </div>
+  </main>
+
+  <footer>
+  </footer>
+
+<script src="js/store.js"></script>
+  <script src="js/background-animation.js"></script>
+
+</body>
+</html>

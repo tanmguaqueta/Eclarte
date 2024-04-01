@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Videos - ECLARTE</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/store-styles.css">
+  <link rel="stylesheet" href="css/video-gallery.css">
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 100px;
+      position: relative;
+    }
+
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header, main {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      display: none; /* Ocultar el pie de página */
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 10px;
+      justify-items: center;
+      margin-top: 30px;
+      position: relative;
+    }
+
+    .video-thumbnail {
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-width: 600px; /* Ancho máximo aumentado */
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .video-thumbnail:hover {
+      transform: scale(1.1);
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+      pointer-events: none; /* Bloquear interacción del ratón */
+    }
+
+    .virtual-person {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      pointer-events: none; /* Bloquear interacción del ratón */
+    }
+
+    .virtual-person video {
+      width: 120px; /* Ancho del video */
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .virtual-person video:hover {
+      transform: scale(1.1);
+    }
+
+    /* Estilos para la burbuja de mensaje */
+    .message-bubble {
+      position: fixed;
+      bottom: -100px; /* Inicialmente fuera de la pantalla */
+      right: 139px;
+      background-color: rgb(21 20 21 / 47%);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      z-index: 1000; /* Asegurar que esté sobre otros elementos */
+      animation: showBubble 1s ease forwards; /* Animación de entrada */
+      animation-delay: 8s; /* Retraso de la animación */
+    }
+
+    @keyframes showBubble {
+      0% { bottom: -100px; opacity: 0; }
+      50% { opacity: 1; }
+      100% { bottom: 21px; }
+    }
+
+    /* Estilos para el botón */
+    .message-button {
+      background-color: rgb(75 0 130 / 37%); /* Color de fondo verde */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: -1px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .message-button:hover {
+      background-color: #aa0ba0; /* Cambiar el color de fondo al pasar el mouse */
+    }
+  </style>
+</head>
+<body>
+  <video id="video-background" autoplay loop muted>
+    <source src="gifs/1.mp4" type="video/mp4">
+    Tu navegador no admite la etiqueta de video.
+  </video>
+
+  <header>
+    <h1>ECLARTE</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="store.html">Tienda</a></li>
+        <li><a href="gallery.html">Galería de Imágenes</a></li>
+        <li><a href="video-gallery.html">Galería de Videos</a></li>
+        <li><a href="about.html">Quién Soy</a></li>
+        <li><a href="contact.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="video-gallery">
+      <div class="video-thumbnail">
+        <iframe class="video-iframe" src="https://www.youtube.com/embed/YXB1Z7dEljA?autoplay=1&loop=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <div class="video-thumbnail">
+        <iframe class="video-iframe" src="https://www.youtube.com/embed/hITQ4mR9liU?autoplay=1&loop=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <div class="video-thumbnail">
+        <iframe class="video-iframe" src="https://www.youtube.com/embed/km8TvL1pVC0?autoplay=1&loop=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <div class="video-thumbnail">
+        <iframe class="video-iframe" src="https://www.youtube.com/embed/KxLi5yVIqNA?autoplay=1&loop=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
+
+  <!-- Muñeco virtual -->
+  <div class="virtual-person">
+    <video id="virtual-video" src="gifs/ia3.mp4" autoplay></video>
+  </div>
+
+  <!-- Burbuja de mensaje -->
+  <div class="message-bubble">
+    <span>¡Ingresa!  </span>
+    <button class="message-button" onclick="window.location.href='about.html'">Quién Soy</button>
+    <button class="message-button" onclick="window.location.href='contact.html'">Contáctanos</button>
+  </div>
+
+  <script>
+    // Detener la reproducción del video del muñeco virtual después de que se reproduzca una vez
+    var virtualVideo = document.getElementById('virtual-video');
+    virtualVideo.addEventListener('ended', function() {
+      this.pause();
+    });
+  </script>
+</body>
+</html>

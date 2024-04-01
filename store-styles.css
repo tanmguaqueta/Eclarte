@@ -1,0 +1,143 @@
+/* Estilos específicos para la página de la tienda */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Añadido para permitir el posicionamiento relativo */
+  background-color: #f3f3f3;
+}
+
+header {
+  background-color: rgba(75, 0, 130, 0.6); /* Fondo semitransparente */
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav {
+  margin-top: 30px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(75 0 130 / 37%);
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #8d39cc;
+}
+
+.products-container {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.product-item {
+  background-color: rgba(75, 0, 130, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.5s ease; /* Se agrega transición para la opacidad */
+  opacity: 0; /* Inicialmente oculto */
+  transform: translateY(20px); /* Inicialmente desplazado hacia abajo */
+}
+
+.product-item.active {
+  opacity: 1; /* Se muestra */
+  transform: translateY(0); /* Sin desplazamiento */
+}
+
+.product-item:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+footer {
+  background-color: rgba(75, 0, 130, 0.6); /* Fondo semitransparente */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.store-background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Animación para productos */
+@keyframes fadeInUpAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

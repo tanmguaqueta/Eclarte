@@ -1,0 +1,46 @@
+/* Estilos para las secciones con fondo y margen */
+section {
+  background-color: rgb(75 0 255 / 48%); /* Fondo semitransparente para mejorar la legibilidad */
+  padding: 20px;
+  margin: 20px auto; /* Margen automático para centrar verticalmente */
+  max-width: 600px; /* Ancho máximo del contenido de la sección */
+  border-radius: 10px; /* Borde redondeado */
+  text-align: center; /* Centrar el texto */
+  transition: transform 0.3s; /* Transición suave */
+  position: relative; /* Para posicionar el contenido absoluto */
+}
+
+/* Efecto de escala al pasar el mouse sobre las secciones */
+section:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al 105% */
+}
+
+/* Estilos para los logos de las redes sociales */
+.social-logos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-logos img {
+  width: 50px; /* Tamaño de las imágenes */
+  height: auto;
+}
+
+/* Estilos para las imágenes pequeñas */
+.small-image {
+  position: absolute; /* Posición absoluta para superponer la imagen */
+  top: 10px; /* Ajuste superior */
+  left: 10px; /* Ajuste izquierdo */
+  width: 50px; /* Ancho de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 10px; /* Borde redondeado */
+  transition: transform 0.3s; /* Transición suave */
+}
+
+/* Efecto de movimiento al pasar el mouse sobre las imágenes */
+.small-image:hover {
+  transform: rotate(15deg); /* Rotación de 15 grados */
+}
